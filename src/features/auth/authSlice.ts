@@ -22,9 +22,9 @@ export const login = createAsyncThunk(
             const token = credential?.accessToken;
             if(token){
                 localStorage.setItem("accessToken", token);
+                localStorage.setItem("user", JSON.stringify(result.user))
             }
-            console.log(result)
-            return {email: result.user.email}
+            return {email: result.user.email, photoURL: result.user.photoURL, displayName: result.user.displayName}
         } catch (error) {
             console.log(error);
         }
@@ -38,6 +38,9 @@ export const authSlice = createSlice({
         signout: (state) => {
             localStorage.setItem("accessToken", "");
             state.user = undefined;
+        },
+        setUser: (state, action: PayloadAction<User>) => {
+            state.user = action.payload
         }
     },
     extraReducers: (builder) => {
@@ -49,6 +52,6 @@ export const authSlice = createSlice({
 
 export const selectUser = (state: RootState) => state.auth.user
 
-export const { signout } = authSlice.actions
+export const { signout, setUser } = authSlice.actions
 
 export default authSlice.reducer;

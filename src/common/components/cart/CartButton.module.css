@@ -1,0 +1,30 @@
+.cartButton {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    display: flex;
+}
+
+.cartButton svg {
+    width: 20px;
+    height: 20px;
+}
+
+.cartButton:hover {
+    cursor: pointer;
+}
+
+.cartButton .cartContent {
+    background-color: #FFD300;
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    font-size: .6rem;
+}

@@ -1,3 +1,5 @@
 export default interface User {
-    email: String
+    email: string,
+    displayName?: string,
+    photoURL?: string
 }

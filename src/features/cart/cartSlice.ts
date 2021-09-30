@@ -17,7 +17,12 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         addProduct: (state, action: PayloadAction<Product>) => {
-            state.products.push(action.payload)
+            const product = state.products.find(p => p.id === action.payload.id)
+            if (product) {
+                product.quantity++;
+            } else {
+                state.products.push(action.payload)
+            }
         },
         toggleVisible: (state) => {
             state.visible = !state.visible

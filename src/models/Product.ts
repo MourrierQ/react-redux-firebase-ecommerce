@@ -1,3 +1,6 @@
 export default interface Product {
-    name: String
+    id: string,
+    name: String,
+    price: number,
+    quantity: number
 }

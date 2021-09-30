@@ -2,12 +2,16 @@ import { configureStore, ThunkAction, Action, createReducer } from '@reduxjs/too
 import counterReducer from '../features/counter/counterSlice';
 import cartReducer from '../features/cart/cartSlice';
 import authReducer from '../features/auth/authSlice'
+import drawerReducer from "../features/drawer/drawerSlice"
+import productReducer from "../features/product/productSlice"
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     cart: cartReducer,
-    auth: authReducer
+    auth: authReducer,
+    drawer: drawerReducer,
+    product: productReducer
   },
 });
 

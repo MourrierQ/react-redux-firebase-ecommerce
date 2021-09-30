@@ -1,0 +1,44 @@
+.cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    transform: translateX(500px);
+    transition: all .2s ease-in-out;
+    padding: 10px;
+    box-sizing: border-box;
+    border-left: 1px solid #ccc;
+    background-color: #fafafa;
+}
+
+.cart.visible {
+    transform: translateX(0px);
+}
+
+.closeCart {
+    height: 50px;
+    width: 50px;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.closeCart:hover {
+    cursor: pointer;
+}
+
+.closeCart svg {
+    height: 30px;
+    width: 30px;
+}
+
+.cart .productList {
+    list-style: none;
+}

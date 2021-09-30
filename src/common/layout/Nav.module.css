@@ -1,0 +1,47 @@
+.nav {
+    height: 200px;
+    width: 100%;
+}
+
+.navContainer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    width: 40px;
+    margin-right: 20px;
+}
+
+.title {}
+
+.links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.links li {
+    margin-right: 20px;
+
+}
+
+.cartLink {
+    display: flex;
+    align-items: center;
+}
+
+.cartLink svg {
+    height: 20px;
+    width: 20px;
+}

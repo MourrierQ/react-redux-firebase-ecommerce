@@ -1,15 +1,26 @@
-import React, {useState, useEffect} from 'react';
-import { FacebookLoginButton, GoogleLoginButton } from 'react-social-login-buttons'
+import { getAuth } from '@firebase/auth';
+import React, {useEffect} from 'react';
 import { useAppDispatch } from '../../app/hooks';
-import { login } from './authSlice';
+import { setUser } from './authSlice';
 
 
-function Auth(){
+const Auth : React.FC = ({children}) => {
     const dispatch = useAppDispatch();
+    useEffect(() => {
+        const userString = localStorage.getItem('user');
+        if (userString){
+            const user = JSON.parse(userString);
+            console.log(user);
+            dispatch(setUser({
+                email: user.email || "",
+                displayName: user.displayName,
+                photoURL: user.photoURL
+            }))
+        }
+    }, [dispatch])
     return (
     <div>
-        <GoogleLoginButton onClick={() => dispatch(login('google'))}/>
-        <FacebookLoginButton onClick={() => dispatch(login('facebook'))}/>
+        {children}
     </div>
     )
 }

@@ -1,14 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import './App.css';
 import Auth from './features/auth/Auth';
+import Layout from './common/layout/Layout';
+import Signin from './pages/Signin';
+import Products from './pages/Products';
 
 function App() {
   return (
-    <div className="App">
-      <Auth/>
-    </div>
+    <Auth>
+      <Layout>
+        <Products/>
+      </Layout>
+    </Auth>
   );
 }
 
